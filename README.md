@@ -28,14 +28,15 @@ on_http_request:
 ```
 
 - Browse to the `Domains` page in the ngrok dashboard and register a domain
-- Replace `https://your-domain-in-ngrok` in the command below with you domain registered in ngrok
+- Replace `https://your-domain-in-ngrok` in the command below with your domain registered in ngrok
 - Replace the authentication token in the command below with [your token](https://dashboard.ngrok.com/get-started/your-authtoken)
+- Run the command to publish your api with ngrok
 
 ```sh
 docker run -it --rm --platform=linux/amd64 --network=ngrokTest -v ".:/app" -w "/app" -e NGROK_AUTHTOKEN=your-token ngrok/ngrok:3.22.0-alpine-amd64 http http://api --traffic-policy-file policy.yml --url https://your-domain-in-ngrok
 ```
 
-The api should be accessible at your domain `https://your-domain-in-ngrok`
+The api should now be accessible at your domain `https://your-domain-in-ngrok`
 
 ![](img/1.png)
 
@@ -74,7 +75,7 @@ docker image rm gcr.io/datadoghq/agent:7
 
 ![](img/5.png)
 
-- Add Datadog as a destination, choose you Datadog site region and API key you noted earlier, and send a test event.
+- Add Datadog as a destination, choose your Datadog site region and API key you noted earlier, and send a test event.
 - Open the Datadog site and browse to the **Log Explorer** page from the navigation panel. You should see that the test event from ngrok will appear.
 
 ![](img/6.png)
