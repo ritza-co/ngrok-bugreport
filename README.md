@@ -1,7 +1,14 @@
 
-# Steps to reproduce
+# Traffic policy file blocks events going to Datadog
 
-## Start sample API
+## TL;DR
+
+We want to log events from Ngrok to DataDog. It works as expected with no traffic policy, but any traffic policy blocks the events.
+
+
+## Steps to reproduce
+
+### Start sample API
 
 
 ```sh
@@ -45,7 +52,7 @@ The requests will also show up in traffic inspector
 ![](img/2.png)
 
 
-## Monitor events with Datadog
+### Monitor events with Datadog
 
 - Sign up for a [Datadog account](https://www.datadoghq.com/)
 
